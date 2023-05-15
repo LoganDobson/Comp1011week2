@@ -47,7 +47,7 @@
                   <Insets bottom="10.0" left="30.0" right="30.0" top="30.0" />
                </padding>
             </GridPane>
-            <Button mnemonicParsing="false" text="Submit" />
+            <Button mnemonicParsing="false" onAction="#saveBook" text="Submit" />
             <Label fx:id="finalLabel" text="Label" />
          </children>
       </VBox>

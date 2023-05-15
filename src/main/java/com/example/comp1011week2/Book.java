@@ -25,6 +25,16 @@ public class Book {
 
     }
 
+    public Book( String bookName, String author,String genre ,double price, boolean isAvailable) {
+        this.bookID = -1;
+        setBookName(bookName);
+        setAuthor(author);
+        setGenre(genre);
+        setPrice(price);
+        setAvailable(isAvailable);
+
+    }
+
     //getters and setters
 
 
@@ -69,13 +79,17 @@ public class Book {
     }
 
     public void setGenre(String genre) {
-        List<String> validGenres = Arrays.asList("Drama", "Thriller", "Fantasy", "Crime", "Comedy");
+        List<String> validGenres = Arrays.asList("Drama", "Thriller", "Fantasy", "Crime", "Comedy","Fiction","Non Fiction", "Science Fiction");
         if (validGenres.contains(genre)){
             this.genre = genre;
         }
         else
             throw new IllegalArgumentException("genre must be in the list " + validGenres);
 
+    }
+
+    public static List<String> findGenres(){
+        return Arrays.asList("Drama", "Thriller", "Fantasy", "Crime", "Comedy","Fiction","Non Fiction", "Science Fiction");
     }
 
     public double getPrice() {
@@ -99,7 +113,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return bookID + ": the price of " + bookName + " written by "+ author +
+        return ": the price of " + bookName + " written by "+ author +
+                " of " + genre +
                 " is $" + price + ". Availability " + (isAvailable?"yes":"no");
     }
 }
